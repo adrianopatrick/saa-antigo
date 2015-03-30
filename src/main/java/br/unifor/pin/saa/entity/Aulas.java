@@ -21,6 +21,8 @@ public class Aulas implements Serializable{
     @GeneratedValue(generator="aulas_seq",strategy=GenerationType.SEQUENCE)
 	private Long id;
 
+	
+	
 	public Long getId() {
 		return id;
 	}
