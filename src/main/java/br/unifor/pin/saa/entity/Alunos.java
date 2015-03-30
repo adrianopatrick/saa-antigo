@@ -23,6 +23,15 @@ public class Alunos implements Serializable{
 	
 	@Column(nullable=false)
 	private String nome;
+	
+	
+	@Column(nullable=false)
+	private Integer CPF;
+	
+	@Column(nullable=false)
+	private Integer matricula;
+	
+	
 
 	public Long getId() {
 		return id;
