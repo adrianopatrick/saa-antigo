@@ -35,6 +35,76 @@ public class Turma implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="instituicao_id")
 	private Instituicoes instituicao;
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the disciplina
+	 */
+	public String getDisciplina() {
+		return disciplina;
+	}
+
+	/**
+	 * @param disciplina the disciplina to set
+	 */
+	public void setDisciplina(String disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	/**
+	 * @return the semestre
+	 */
+	public Integer getSemestre() {
+		return semestre;
+	}
+
+	/**
+	 * @param semestre the semestre to set
+	 */
+	public void setSemestre(Integer semestre) {
+		this.semestre = semestre;
+	}
+
+	/**
+	 * @return the professor
+	 */
+	public Professores getProfessor() {
+		return professor;
+	}
+
+	/**
+	 * @param professor the professor to set
+	 */
+	public void setProfessor(Professores professor) {
+		this.professor = professor;
+	}
+
+	/**
+	 * @return the instituicao
+	 */
+	public Instituicoes getInstituicao() {
+		return instituicao;
+	}
+
+	/**
+	 * @param instituicao the instituicao to set
+	 */
+	public void setInstituicao(Instituicoes instituicao) {
+		this.instituicao = instituicao;
+	}
 	
 
 
