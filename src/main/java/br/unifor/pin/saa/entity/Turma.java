@@ -16,7 +16,9 @@ import javax.persistence.Table;
 @Table(name="turma")
 public class Turma implements Serializable {
 
+
 	private static final long serialVersionUID = -1203019308743583974L;
+
 
 	@Id
 	@SequenceGenerator(name="turma_seq", sequenceName="turma_seq", allocationSize=1)
