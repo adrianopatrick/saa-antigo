@@ -31,6 +31,8 @@ public class Usuarios {
 	
 	@Column
 	private boolean ativo;
+	
+	
 
 	public Integer getId() {
 		return id;
