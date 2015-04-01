@@ -21,11 +21,47 @@ public class Instituicoes implements Serializable {
 	@GeneratedValue(generator="instituicoes_seq", strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
-	@Column
+	@Column(nullable=false)
 	private String nome;
 	
 	@Column
 	private String sigla;
+	
+	@Column
+	private String endereco;
+	
+	@Column
+	private String telefone;
+	
+	
+
+	/**
+	 * @return the endereco
+	 */
+	public String getEndereco() {
+		return endereco;
+	}
+
+	/**
+	 * @param endereco the endereco to set
+	 */
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	/**
+	 * @return the telefone
+	 */
+	public String getTelefone() {
+		return telefone;
+	}
+
+	/**
+	 * @param telefone the telefone to set
+	 */
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
 	public Long getId() {
 		return id;
