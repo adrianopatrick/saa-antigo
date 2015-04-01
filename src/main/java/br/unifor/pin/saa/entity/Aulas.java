@@ -2,7 +2,6 @@ package br.unifor.pin.saa.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +19,6 @@ public class Aulas implements Serializable{
 	@SequenceGenerator(name="aulas_seq",sequenceName="aulas_seq",allocationSize=1)
     @GeneratedValue(generator="aulas_seq",strategy=GenerationType.SEQUENCE)
 	private Long id;
-
-	
 	
 	public Long getId() {
 		return id;
