@@ -32,6 +32,10 @@ public class Avaliacoes implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="aluno_id")
 	private Alunos aluno;
+	
+	@ManyToOne
+	@JoinColumn(name="aulas_id")
+	private Aulas aulas;
 
 	/**
 	 * @return the id
@@ -103,9 +107,6 @@ public class Avaliacoes implements Serializable{
 		this.aulas = aulas;
 	}
 
-	@ManyToOne
-	@JoinColumn(name="aulas_id")
-	private Aulas aulas;
-
+	
 
 }
