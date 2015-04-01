@@ -24,6 +24,9 @@ public class Users implements Serializable {
 	private Long id;
 	
 	@Column(nullable=false)
+	private String cpf;
+	
+	@Column(nullable=false)
 	private String email;
 	
 	@Column(nullable=false)
@@ -37,12 +40,23 @@ public class Users implements Serializable {
 	@JoinColumn(name="aluno_id")
 	private Alunos aluno;
 
+	/*
+	 *  Getters e setters
+	 */
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getEmail() {
@@ -68,7 +82,7 @@ public class Users implements Serializable {
 	public void setProfessor(Professores professor) {
 		this.professor = professor;
 	}
-	
+
 	public Alunos getAluno() {
 		return aluno;
 	}
@@ -76,5 +90,5 @@ public class Users implements Serializable {
 	public void setAluno(Alunos aluno) {
 		this.aluno = aluno;
 	}
-
+	
 }

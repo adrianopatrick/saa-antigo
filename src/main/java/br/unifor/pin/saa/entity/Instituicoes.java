@@ -24,45 +24,15 @@ public class Instituicoes implements Serializable {
 	@Column(nullable=false)
 	private String nome;
 	
-	@Column
-	private String sigla;
-	
-	@Column
+	@Column(nullable=false)
 	private String endereco;
 	
-	@Column
+	@Column(nullable=false)
 	private String telefone;
-	
-	
 
-	/**
-	 * @return the endereco
+	/*
+	 *  Getters e setters
 	 */
-	public String getEndereco() {
-		return endereco;
-	}
-
-	/**
-	 * @param endereco the endereco to set
-	 */
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	/**
-	 * @return the telefone
-	 */
-	public String getTelefone() {
-		return telefone;
-	}
-
-	/**
-	 * @param telefone the telefone to set
-	 */
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -79,12 +49,20 @@ public class Instituicoes implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getSigla() {
-		return sigla;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	
 }

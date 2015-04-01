@@ -26,27 +26,23 @@ public class Aulas implements Serializable{
 	@JoinColumn(name="turma_id")
 	private Turma turma;
 
-	
+	/*
+	 *  Getters e setters
+	 */
 	public Long getId() {
 		return id;
 	}
 
-	/**
-	 * @return the turma
-	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Turma getTurma() {
 		return turma;
 	}
 
-	/**
-	 * @param turma the turma to set
-	 */
 	public void setTurma(Turma turma) {
 		this.turma = turma;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }

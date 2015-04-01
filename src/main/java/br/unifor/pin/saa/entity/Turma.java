@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -38,77 +40,54 @@ public class Turma implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="instituicao_id")
 	private Instituicoes instituicao;
+	
+	//@ManyToMany
+	//@JoinTable(name ="cursa",
+	//joinColumns=@JoinColumn(name="t_id"),
+	//inverseJoinColumns=@JoinColumn(name="a_id"))
+	//private Alunos aluno;
 
-	/**
-	 * @return the id
+	/*
+	 *  Getters e setters
 	 */
 	public Long getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the disciplina
-	 */
 	public String getDisciplina() {
 		return disciplina;
 	}
 
-	/**
-	 * @param disciplina the disciplina to set
-	 */
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
 	}
 
-	/**
-	 * @return the semestre
-	 */
 	public Integer getSemestre() {
 		return semestre;
 	}
 
-	/**
-	 * @param semestre the semestre to set
-	 */
 	public void setSemestre(Integer semestre) {
 		this.semestre = semestre;
 	}
 
-	/**
-	 * @return the professor
-	 */
 	public Professores getProfessor() {
 		return professor;
 	}
 
-	/**
-	 * @param professor the professor to set
-	 */
 	public void setProfessor(Professores professor) {
 		this.professor = professor;
 	}
 
-	/**
-	 * @return the instituicao
-	 */
 	public Instituicoes getInstituicao() {
 		return instituicao;
 	}
 
-	/**
-	 * @param instituicao the instituicao to set
-	 */
 	public void setInstituicao(Instituicoes instituicao) {
 		this.instituicao = instituicao;
 	}
-	
-
 
 }

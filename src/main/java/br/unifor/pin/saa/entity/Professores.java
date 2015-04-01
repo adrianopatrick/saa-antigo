@@ -23,7 +23,10 @@ public class Professores implements Serializable {
 	
 	@Column(nullable=false)
 	private String nome;
-
+	
+	/*
+	 *  Getters e setters
+	 */
 	public Long getId() {
 		return id;
 	}
