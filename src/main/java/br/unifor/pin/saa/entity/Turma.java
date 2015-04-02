@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -40,12 +38,6 @@ public class Turma implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="instituicao_id")
 	private Instituicoes instituicao;
-	
-	//@ManyToMany
-	//@JoinTable(name ="cursa",
-	//joinColumns=@JoinColumn(name="t_id"),
-	//inverseJoinColumns=@JoinColumn(name="a_id"))
-	//private Alunos aluno;
 
 	/*
 	 *  Getters e setters
