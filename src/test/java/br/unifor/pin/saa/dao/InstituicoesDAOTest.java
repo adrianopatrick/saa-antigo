@@ -23,18 +23,21 @@ public class InstituicoesDAOTest {
 	@Test
 	public void testAtualizar() {
 		final String nome = "Universidade de Fortaleza";
-		final String sigla = "UNFOR";
-		final String siglaAlterada = "UNIFOR";
+		final String nomeAlterado = "UNIFOR";
+		final String endereco = "Av. Washington Soares, 1321";
+		final String telefone = "3477-3000";
+		
 		Instituicoes instituicao = new Instituicoes();
 		instituicao.setNome(nome);
-		instituicao.setSigla(sigla);
+		instituicao.setEndereco(endereco);
+		instituicao.setTelefone(telefone);
 		
 		instituicoesDAO.salvar(instituicao);
-		instituicao.setSigla(siglaAlterada);
+		instituicao.setNome(nomeAlterado);
 		instituicoesDAO.atualizar(instituicao);
 		instituicao = instituicoesDAO.buscarPorId(instituicao.getId());
 		
-		Assert.assertEquals(siglaAlterada, instituicao.getSigla());
+		Assert.assertEquals(nomeAlterado, instituicao.getNome());
 	}
 
 }
