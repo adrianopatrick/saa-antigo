@@ -15,16 +15,16 @@ public class AulasDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public void salvar(Aulas aulas) {
-		entityManager.persist(aulas);
+	public void salvar(Aulas aula) {
+		entityManager.persist(aula);
 	}
 	
-	public void atualizar(Aulas aulas){
-		entityManager.merge(aulas);
+	public void atualizar(Aulas aula){
+		entityManager.merge(aula);
 	}
 	
-	public void excluir(Aulas aulas){
-		entityManager.remove(aulas);
+	public void excluir(Aulas aula){
+		entityManager.remove(aula);
 	}
 	
 	public Aulas buscarPorId(Long id){
