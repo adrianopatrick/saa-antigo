@@ -17,16 +17,16 @@ public class UsersDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public void salvar(Users users) {
-		entityManager.persist(users);
+	public void salvar(Users user) {
+		entityManager.persist(user);
 	}
 	
-	public void atualizar(Users users){
-		entityManager.merge(users);
+	public void atualizar(Users user){
+		entityManager.merge(user);
 	}
 	
-	public void excluir(Users users){
-		entityManager.remove(users);
+	public void excluir(Users user){
+		entityManager.remove(user);
 	}
 	
 	public Users buscarPorId(Long id){
