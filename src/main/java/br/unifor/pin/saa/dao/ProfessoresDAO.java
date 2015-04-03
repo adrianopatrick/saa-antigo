@@ -18,16 +18,16 @@ public class ProfessoresDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public void salvar(Professores professores) {
-		entityManager.persist(professores);
+	public void salvar(Professores professor) {
+		entityManager.persist(professor);
 	}
 	
-	public void atualizar(Professores professores){
-		entityManager.merge(professores);
+	public void atualizar(Professores professor){
+		entityManager.merge(professor);
 	}
 	
-	public void excluir(Professores professores){
-		entityManager.remove(professores);
+	public void excluir(Professores professor){
+		entityManager.remove(professor);
 	}
 	
 	public Professores buscarPorId(Long id){
