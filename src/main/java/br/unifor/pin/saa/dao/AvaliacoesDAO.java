@@ -16,16 +16,16 @@ public class AvaliacoesDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public void salvar(Avaliacoes avaliacoes) {
-		entityManager.persist(avaliacoes);
+	public void salvar(Avaliacoes avaliacao) {
+		entityManager.persist(avaliacao);
 	}
 	
-	public void atualizar(Avaliacoes avaliacoes){
-		entityManager.merge(avaliacoes);
+	public void atualizar(Avaliacoes avaliacao){
+		entityManager.merge(avaliacao);
 	}
 	
-	public void excluir(Avaliacoes avaliacoes){
-		entityManager.remove(avaliacoes);
+	public void excluir(Avaliacoes avaliacao){
+		entityManager.remove(avaliacao);
 	}
 	
 	public Avaliacoes buscarPorId(Long id){
