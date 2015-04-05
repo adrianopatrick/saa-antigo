@@ -25,10 +25,10 @@ public class Alunos implements Serializable{
 	private String nome;
 	
 	@Column(nullable=false)
-	private Integer cpf;
+	private String cpf;
 	
 	@Column(nullable=false)
-	private Integer matricula;
+	private String matricula;
 	
 	/*
 	 *  Getters e setters
@@ -49,20 +49,19 @@ public class Alunos implements Serializable{
 		this.nome = nome;
 	}
 
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public Integer getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(Integer matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	
 }

@@ -18,8 +18,8 @@ public class Cursa implements Serializable{
 	private static final long serialVersionUID = 3600592866221208790L;
 
 	@Id
-	@SequenceGenerator(name="alunos_seq",sequenceName="alunos_seq",allocationSize=1)
-    @GeneratedValue(generator="alunos_seq",strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name="cursa_seq",sequenceName="cursa_seq",allocationSize=1)
+    @GeneratedValue(generator="cursa_seq",strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
 	@ManyToOne
