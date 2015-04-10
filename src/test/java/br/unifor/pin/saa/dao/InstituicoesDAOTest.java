@@ -18,7 +18,7 @@ import br.unifor.pin.saa.entity.Instituicoes;
 public class InstituicoesDAOTest {
 	
 	@Autowired
-	private InstituicoesDAO instituicoesDAO;//yuuyyu
+	private InstituicoesDAO instituicoesDAO;
 
 	@Test
 	public void testAtualizar() {
