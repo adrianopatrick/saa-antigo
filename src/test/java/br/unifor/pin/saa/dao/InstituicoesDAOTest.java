@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import br.unifor.pin.saa.entity.Instituicoes;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,6 +39,68 @@ public class InstituicoesDAOTest {
 		instituicao = instituicoesDAO.buscarPorId(instituicao.getId());
 		
 		Assert.assertEquals(nomeAlterado, instituicao.getNome());
+		
+		instituicoesDAO.excluir(instituicao);
+	
+	}
+	@Test
+	public void testSalvar() {
+		final String nome = "Universidade de Fortaleza";
+		final String endereco = "Av. Washington Soares, 1321";
+		final String telefone = "3477-3000";
+		
+		Instituicoes instituicao = new Instituicoes();
+		instituicao.setNome(nome);
+		instituicao.setEndereco(endereco);
+		instituicao.setTelefone(telefone);
+		
+		instituicoesDAO.salvar(instituicao);
+		
+		instituicao = instituicoesDAO.buscarPorNome(instituicao.getNome());
+		Assert.assertNull(instituicao);
+		
+		instituicoesDAO.excluir(instituicao);
+	
+	}	
+	@Test
+	public void testBuscarPorId(){
+		final String nome = "Universidade de Fortaleza";
+		final String endereco = "Av. Washington Soares, 1321";
+		final String telefone = "3477-3000";
+		
+		Instituicoes instituicao = new Instituicoes();
+		instituicao.setNome(nome);
+		instituicao.setEndereco(endereco);
+		instituicao.setTelefone(telefone);
+		
+		instituicoesDAO.salvar(instituicao);
+		
+		Instituicoes instituicaoRetorno = instituicoesDAO.buscarPorNome(instituicao.getNome());
+		Long id = instituicaoRetorno.getId();
+		Instituicoes instituicaoNovo= instituicoesDAO.buscarPorId(id);
+		
+		Assert.assertNotNull(instituicaoNovo);
+		
+		instituicoesDAO.excluir(instituicaoRetorno);
+	
+	}
+	@Test
+	public void testBuscarPorNome(){
+		final String nome = "Universidade de Fortaleza";
+		final String endereco = "Av. Washington Soares, 1321";
+		final String telefone = "3477-3000";
+		
+		Instituicoes instituicao = new Instituicoes();
+		instituicao.setNome(nome);
+		instituicao.setEndereco(endereco);
+		instituicao.setTelefone(telefone);
+		
+		instituicoesDAO.salvar(instituicao);
+		instituicao = instituicoesDAO.buscarPorNome(instituicao.getNome());
+		Assert.assertNotNull(instituicao);
+		
+		instituicoesDAO.excluir(instituicao);
+	
 	}
 
 }
