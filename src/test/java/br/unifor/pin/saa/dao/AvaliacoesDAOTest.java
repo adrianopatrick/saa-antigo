@@ -77,7 +77,7 @@ public class AvaliacoesDAOTest {
 		
 		Assert.assertNotNull(avaliacoesRetorno);
 		
-		avaliacoesDAO.excluir(avaliacoes);
+		avaliacoesDAO.excluir(avaliacoesRetorno);
 		
 	}
 	

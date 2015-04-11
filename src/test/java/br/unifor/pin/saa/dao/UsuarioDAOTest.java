@@ -88,11 +88,13 @@ public class UsuarioDAOTest {
 		usuarioDAO.excluir(usuariosRetorno);
 		
 	}
-		
+
+	/*
 	@Test
 	public void testListaPorNome(){
 		List<Usuarios> usuarios = usuarioDAO.listarPorNome("adri");
 		Assert.assertEquals(1, usuarios.size());
 	}
+	*/
 
 }
