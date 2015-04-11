@@ -2,6 +2,7 @@ package br.unifor.pin.saa.dao;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.entity.Alunos;
+import br.unifor.pin.saa.entity.Instituicoes;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/test-context.xml")
@@ -23,8 +25,13 @@ public class AlunoDAOTest {
 	@Test
 	public void testSalvar() {
 		final String nome = "Matheus";
+		final String cpf = "111.222.333-44";
+		final String matricula = "123456.7/8";
+		
 		Alunos aluno = new Alunos();
 		aluno.setNome(nome);
+		aluno.setCpf(cpf);
+		aluno.setMatricula(matricula);
 		
 		alunoDAO.salvar(aluno);
 		Alunos alunoRetorno = alunoDAO.buscarPorNome(nome);
@@ -35,30 +42,39 @@ public class AlunoDAOTest {
 	
 	@Test
 	public void testAtualizar(){
+		
 		final String nome = "Matheus";
 		final String nomeAlterado = "Jorge";
+		final String cpf = "111.222.333-44";
+		final String matricula = "123456.7/8";
+		
 		Alunos aluno = new Alunos();
 		aluno.setNome(nome);
+		aluno.setCpf(cpf);
+		aluno.setMatricula(matricula);
 		
 		alunoDAO.salvar(aluno);
-		Alunos alunoRetorno = alunoDAO.buscarPorNome(nome);
+		aluno.setNome(nomeAlterado);		
+		alunoDAO.atualizar(aluno);
+
+		Assert.assertEquals(nomeAlterado, aluno.getNome());
 		
-		alunoRetorno.setNome(nomeAlterado);
-		alunoDAO.atualizar(alunoRetorno);
-		
-		Alunos alunoNovo = alunoDAO.buscarPorNome(nomeAlterado);
-		Assert.assertNotNull(alunoNovo);
-		
-		alunoDAO.excluir(alunoRetorno);
+		alunoDAO.excluir(aluno);
 	}
 	
 	@Test
 	public void testBuscarPorId(){
 		final String nome = "Matheus";
+		final String cpf = "111.222.333-44";
+		final String matricula = "123456.7/8";
+		
 		Alunos aluno = new Alunos();
 		aluno.setNome(nome);
+		aluno.setCpf(cpf);
+		aluno.setMatricula(matricula);
 		
 		alunoDAO.salvar(aluno);
+		
 		Alunos alunoRetorno = alunoDAO.buscarPorNome(nome);
 		Long id = alunoRetorno.getId();
 		Alunos alunoNovo = alunoDAO.buscarPorId(id);
@@ -66,6 +82,26 @@ public class AlunoDAOTest {
 		Assert.assertNotNull(alunoNovo);
 		
 		alunoDAO.excluir(alunoRetorno);
+	}
+	
+	@Test
+	public void testBuscarPorNome(){
+		final String nome = "Matheus";
+		final String cpf = "111.222.333-44";
+		final String matricula = "123456.7/8";
+		
+		Alunos aluno = new Alunos();
+		aluno.setNome(nome);
+		aluno.setCpf(cpf);
+		aluno.setMatricula(matricula);
+		
+		alunoDAO.salvar(aluno);
+		aluno = alunoDAO.buscarPorNome(aluno.getNome());
+		
+		Assert.assertNotNull(aluno);
+		
+		alunoDAO.excluir(aluno);
+		
 	}
 
 }
