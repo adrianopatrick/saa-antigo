@@ -14,6 +14,7 @@ import br.unifor.pin.saa.entity.Usuarios;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/test-context.xml")
+@Transactional(propagation=Propagation.REQUIRED)
 public class UsuarioDAOTest {
 	
 	@Autowired
@@ -44,8 +45,8 @@ public class UsuarioDAOTest {
 		final boolean primeiroAcesso = (true);
 		final boolean ativo = (true);
 		
-		
 		Usuarios usuario = new Usuarios();
+		
 		usuario.setNome(nome);
 		usuario.setSenha(senha);
 		usuario.setEmail(email);
@@ -55,11 +56,8 @@ public class UsuarioDAOTest {
 		usuarioDAO.salvar(usuario);
 		usuario.setNome(nomeAlterado);
 		usuarioDAO.atualizar(usuario);
-		usuario = usuarioDAO.buscaPorId(usuario.getId());
 		
 		Assert.assertEquals(nomeAlterado, usuario.getNome());
-		
-		
 		
 		usuarioDAO.excluir(usuario);
 		
@@ -67,18 +65,27 @@ public class UsuarioDAOTest {
 	@Test
 	public void testBuscarPorId() throws Exception {
 		
+		final String nome = "Adriano";
+		final String email = "adriano@gmail.com";
+		final String senha = "123456";
+		final boolean primeiroAcesso = (true);
+		final boolean ativo = (true);
+		
 		Usuarios usuario = new Usuarios();
-		usuario.setNome("adriano");
-		usuario.setSenha("123456");
-		usuario.setEmail("adriano@gmail.com");
-		usuario.setPrimeiroAcesso(true);
-		usuario.setAtivo(false);
+		
+		usuario.setNome(nome);
+		usuario.setEmail(email);
+		usuario.setSenha(senha);
+		usuario.setPrimeiroAcesso(primeiroAcesso);
+		usuario.setAtivo(ativo);
+		
 		usuarioDAO.salvar(usuario);
-
-		//Usuarios usuarioRetorno = Usua......
-		//Long id = usuarioRetorno.get
-		Assert.assertNotNull(usuario.getId());
-		System.out.println(usuario.getId());
+		
+		Usuarios usuariosRetorno = usuarioDAO.buscaPorId(usuario.getId());
+		
+		Assert.assertNotNull(usuariosRetorno);
+		
+		usuarioDAO.excluir(usuariosRetorno);
 		
 	}
 		
