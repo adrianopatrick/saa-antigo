@@ -5,7 +5,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ AlunoDAOTest.class, InstituicoesDAOTest.class })
+@SuiteClasses({ AlunoDAOTest.class, AulasDAOTest.class,
+		AvaliacoesDAOTest.class, InstituicoesDAOTest.class,
+		ProfessoresDAOTest.class, TurmaDAOTest.class, UsersDAOTest.class,
+		UsuarioDAOTest.class })
 public class SuiteTestDAO {
 
 }

@@ -57,7 +57,7 @@ public class InstituicoesDAOTest {
 		instituicoesDAO.salvar(instituicao);
 		
 		instituicao = instituicoesDAO.buscarPorNome(instituicao.getNome());
-		Assert.assertNull(instituicao);
+		Assert.assertNotNull(instituicao); 
 		
 		instituicoesDAO.excluir(instituicao);
 	
