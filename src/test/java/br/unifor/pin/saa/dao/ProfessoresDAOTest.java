@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import br.unifor.pin.saa.entity.Professores;
-
+//teste commit
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/test-context.xml")
 @Transactional(propagation=Propagation.REQUIRED)
