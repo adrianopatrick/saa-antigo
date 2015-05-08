@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.InstituicoesDAO;
+import br.unifor.pin.saa.entity.Alunos;
 import br.unifor.pin.saa.entity.Instituicoes;
 
 
@@ -36,6 +37,13 @@ public class InstituicoesBO {
 	
 	public Instituicoes buscarPorId(Long id){
 		return instituicoesDAO.buscarPorId(id);
+	}
+	
+	public Instituicoes buscarPorNome(String nome) {
+		loggerInit("BuscaInstituicoesPorNome");
+		Instituicoes instituicoes = instituicoesDAO.buscarPorNome(nome);
+		loggerInit("BuscaAlunoPorNome");
+		return instituicoes;
 	}
 	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
