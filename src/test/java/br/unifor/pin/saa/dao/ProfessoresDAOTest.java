@@ -9,10 +9,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-
-
-
-
 import br.unifor.pin.saa.entity.Professores;
 //teste commit
 @RunWith(SpringJUnit4ClassRunner.class)
