@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.InstituicoesDAO;
-import br.unifor.pin.saa.entity.Alunos;
 import br.unifor.pin.saa.entity.Instituicoes;
 
 
