@@ -29,7 +29,7 @@ public class Turma implements Serializable {
 	private String disciplina;
 	
 	@Column(nullable=false)
-	private Integer semestre;
+	private String semestre;
 	
 	@ManyToOne
 	@JoinColumn(name="professor_id")
@@ -51,18 +51,18 @@ public class Turma implements Serializable {
 	}
 
 	public String getDisciplina() {
-		return disciplina;
+		return disciplina+":"+semestre;
 	}
 
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
 	}
 
-	public Integer getSemestre() {
+	public String getSemestre() {
 		return semestre;
 	}
 
-	public void setSemestre(Integer semestre) {
+	public void setSemestre(String semestre) {
 		this.semestre = semestre;
 	}
 

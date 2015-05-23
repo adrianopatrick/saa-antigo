@@ -1,14 +1,18 @@
 package br.unifor.pin.saa.bussines;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.TurmaDAO;
 import br.unifor.pin.saa.entity.Turma;
 
+@Component
 public class TurmaBO {
 	
 	private static final Logger logger = LoggerFactory
@@ -40,6 +44,10 @@ public class TurmaBO {
 		turma = turmaDAO.buscarPorId(turma.getId());
 		turmaDAO.excluir(turma);
 		loggerFinhish("excluir");
+	}
+	
+	public List<Turma> buscarTodos(){
+		return turmaDAO.buscarTodos();
 	}
 
 	public void loggerInit(String method) {

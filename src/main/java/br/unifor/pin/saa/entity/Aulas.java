@@ -25,10 +25,29 @@ public class Aulas implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="turma_id")
 	private Turma turma;
-
+	private String descricao;
+	private String conteudo;
+	
 	/*
 	 *  Getters e setters
 	 */
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getConteudo() {
+		return conteudo;
+	}
+
+	public void setConteudo(String conteudo) {
+		this.conteudo = conteudo;
+	}
+
 	public Long getId() {
 		return id;
 	}

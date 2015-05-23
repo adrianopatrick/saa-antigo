@@ -41,6 +41,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsp</url-pattern> <!-- adicionado novo pattern servlet -->
 		<url-pattern>*.jsf</url-pattern>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>

@@ -29,7 +29,7 @@ public class TurmaDAOTest {
 		
 		Turma turma = new Turma();
 		turma.setDisciplina(disciplina);
-		turma.setSemestre(semestre);
+		turma.setSemestre(""+semestre);
 		
 		turmaDAO.salvar(turma);
 		
@@ -48,7 +48,7 @@ public class TurmaDAOTest {
 		
 		Turma turma = new Turma();
 		turma.setDisciplina(disciplina);
-		turma.setSemestre(semestre);
+		turma.setSemestre(""+semestre);
 		turmaDAO.salvar(turma);
 		
 		turma.setDisciplina(disciplina_alterada);
@@ -67,7 +67,7 @@ public class TurmaDAOTest {
 		
 		Turma turma = new Turma();
 		turma.setDisciplina(disciplina);
-		turma.setSemestre(semestre);
+		turma.setSemestre(""+semestre);
 		
 		turmaDAO.salvar(turma);
 		

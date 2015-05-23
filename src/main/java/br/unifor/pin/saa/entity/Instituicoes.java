@@ -29,6 +29,9 @@ public class Instituicoes implements Serializable {
 	
 	@Column(nullable=false)
 	private String telefone;
+	
+	@Column(nullable=false)
+	private String sigla;
 
 	/*
 	 *  Getters e setters
@@ -64,5 +67,14 @@ public class Instituicoes implements Serializable {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	public String getSigla() {
+		return sigla;
+	}
+	
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+	
 	
 }
