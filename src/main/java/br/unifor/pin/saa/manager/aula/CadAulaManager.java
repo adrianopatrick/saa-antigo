@@ -29,7 +29,7 @@ public class CadAulaManager {
 	private TurmaBO turmaBO;
 
 	private Aulas aula;
-	
+
 	public CadAulaManager() {
 		aula = new Aulas();
 	}
@@ -51,10 +51,11 @@ public class CadAulaManager {
 		}
 		return items;
 	}
-	
+
 	public Aulas getAula() {
 		return aula;
 	}
+
 	public void setAula(Aulas aula) {
 		this.aula = aula;
 	}

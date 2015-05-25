@@ -1,5 +1,7 @@
 package br.unifor.pin.saa.bussines;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +21,9 @@ public class AlunosBO {
 	@Autowired
 	private AlunosDAO alunosDAO;
 
-	public void salvar(Alunos aluno) throws Exception {
+	public void salvar(Alunos aluno){
 		loggerInit("salvar");
-		if (aluno.getNome() == "nomefeio"){
-			throw new Exception("Nao pode ter nome feio!");
-		}else{
-			alunosDAO.salvar(aluno);
-		}
+		alunosDAO.salvar(aluno);
 		loggerFinhish("salvar");
 	}
 	
@@ -45,6 +43,15 @@ public class AlunosBO {
 	public Alunos buscarPorId(Long id){
 		return alunosDAO.buscarPorId(id);
 	}
+	
+	public List<Alunos> listaAlunosPorNome(String nome) {
+		loggerInit("listaAlunosPorNome");
+		List<Alunos> alunos = alunosDAO.listarPorNome(nome);
+		loggerFinhish("listaAlunosPorNome");
+		return alunos;
+	}
+	
+
 	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void excluir(Alunos aluno) {
