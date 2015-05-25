@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import br.unifor.pin.saa.bussines.AlunosBO;
 import br.unifor.pin.saa.entity.Alunos;
-import br.unifor.pin.saa.entity.Usuarios;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped
@@ -24,16 +23,17 @@ public class ListAlunoManager {
 	private List<Alunos> alunos;
 	
 	public void lista(){
+		
 		alunos = alunosBO.listaAlunosPorNome(nome);
 	}
 	
-	public void excluir(Alunos alunos){
-		alunosBO.excluir(alunos);
-		alunos = (Alunos) alunosBO.listaAlunosPorNome(nome);
+	public void excluir(Alunos aluno){
+		alunosBO.excluir(aluno);
+		alunos = alunosBO.listaAlunosPorNome(nome);
 	}
 	
-	public String preparaAtualizar(Usuarios usuario){
-		System.out.println(usuario.getNome());
+	public String preparaAtualizar(Alunos aluno){
+		System.out.println(aluno.getNome());
 		return null;
 	}
 	
@@ -44,7 +44,7 @@ public class ListAlunoManager {
 	
 	public void limparDados(){
 		this.nome = "";
-		this.setAlunos(null);
+		this.alunos = null;
 	}
 	
 	

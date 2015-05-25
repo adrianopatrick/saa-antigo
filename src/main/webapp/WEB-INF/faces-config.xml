@@ -13,15 +13,17 @@
 			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
+	<!-- Cadastro aluno -->
 	<navigation-rule>
-		<from-view-id>/pages/login/login.xhtml</from-view-id>
+		<from-view-id>/pages/aluno/cadAluno.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
+			<to-view-id>/pages/aluno/cadAluno.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
+	<!-- Cadastro Aula -->
 	<navigation-rule>
 		<from-view-id>/pages/aula/cadAula.xhtml</from-view-id>
 		<navigation-case>
@@ -29,7 +31,8 @@
 			<to-view-id>/pages/aula/cadAula.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
+	<!-- Usuario -->
 	<navigation-rule>
 		<from-view-id>/pages/usuario/listUsuario.xhtml</from-view-id>
 		<navigation-case>
@@ -45,7 +48,7 @@
 			<to-view-id>/pages/usuario/atualizaUsuario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/pages/usuario/cadUsuario.xhtml</from-view-id>
 		<navigation-case>
@@ -53,7 +56,7 @@
 			<to-view-id>/pages/usuario/listUsuario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/pages/usuario/atualizaUsuario.xhtml</from-view-id>
 		<navigation-case>
@@ -62,6 +65,40 @@
 		</navigation-case>
 	</navigation-rule>
 	<!-- Usuarios Fim -->
+
+	<!-- Aluno -->
+	<navigation-rule>
+		<from-view-id>/pages/aluno/listAluno.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/aluno/cadAluno.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/aluno/listAluno.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>atualiza</from-outcome>
+			<to-view-id>/pages/aluno/atualizaAluno.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/aluno/cadAluno.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/aluno/listAluno.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/aluno/atualizaAluno.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/aluno/listAluno.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- Aluno Fim -->
 
 	<application>
 		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
