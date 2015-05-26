@@ -41,6 +41,11 @@ public class CadAulaManager {
 
 		return Navigation.SUCESSO;
 	}
+	
+	public String preparaSalvar(){
+		
+		return Navigation.SUCESSO;
+	}
 
 	public Collection<SelectItem> getTurma() {
 		Collection<SelectItem> items = new ArrayList<SelectItem>();
