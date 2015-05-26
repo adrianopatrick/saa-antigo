@@ -5,7 +5,7 @@
       http://java.sun.com/xml/ns/javaee
       http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
-	<!-- Usuarios Inicio -->
+	<!-- Usuarios -->
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -13,24 +13,48 @@
 			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<!-- Usuarios fim -->
 
-	<!-- Cadastro aluno -->
+	<!-- Login -->
 	<navigation-rule>
-		<from-view-id>/pages/aluno/cadAluno.xhtml</from-view-id>
+		<from-view-id>/pages/login/login.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/pages/aluno/cadAluno.xhtml</to-view-id>
+			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>falha</from-outcome>
+			<to-view-id>/pages/login/login.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<!-- Login fim -->
 
-	<!-- Cadastro Aula -->
+	<!-- Aula -->
 	<navigation-rule>
 		<from-view-id>/pages/aula/cadAula.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/pages/aula/cadAula.xhtml</to-view-id>
+			<to-view-id>/pages/aula/listAula.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/aula/listAula.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>atualiza</from-outcome>
+			<to-view-id>/pages/aula/atualizaAula.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/aula/atualizaAula.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/aula/listAula.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Aula fim -->
 
 	<!-- Usuario -->
 	<navigation-rule>
@@ -40,7 +64,7 @@
 			<to-view-id>/pages/usuario/cadUsuario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/pages/usuario/listUsuario.xhtml</from-view-id>
 		<navigation-case>
