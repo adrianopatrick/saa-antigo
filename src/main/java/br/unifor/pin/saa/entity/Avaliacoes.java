@@ -23,6 +23,10 @@ public class Avaliacoes implements Serializable{
     @GeneratedValue(generator="avaliacoes_seq",strategy=GenerationType.SEQUENCE)
 	private Long id;
 	
+	
+	@Column(nullable=false)
+	private String comentario;
+	
 	@Column(nullable=false)
 	private Double nota;
 	
@@ -78,6 +82,14 @@ public class Avaliacoes implements Serializable{
 
 	public void setAulas(Aulas aulas) {
 		this.aulas = aulas;
+	}
+
+	public String getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
 	}
 
 }

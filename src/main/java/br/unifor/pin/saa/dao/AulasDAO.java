@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.entity.Aulas;
+import br.unifor.pin.saa.entity.Turma;
 
 @Repository
 @Transactional(propagation=Propagation.REQUIRED)
@@ -47,6 +48,14 @@ public class AulasDAO {
 		
 		Query query = entityManager.createQuery(criteriaQuery);
 		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Aulas> buscarTodos(){
+		String jpql = "select a from Aulas a";
+		Query query = entityManager.createQuery(jpql);
+		
+		return (List<Aulas>)query.getResultList();
 	}
 	
 }

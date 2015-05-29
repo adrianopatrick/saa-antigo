@@ -11,23 +11,24 @@
 				draggable="false" resizable="false" width="400" height="200"
 				position="470,165" closable="false">
 				<h:panelGrid columns="1" styleClass="panelgrid">
-				 	
-				 	<p:outputLabel value="Usuário:" />
-					<p:inputText id="nome" value="#{login.nome}" required="true" 
-					requiredMessage="Campo Obrigatório" />
-					
-					<h:outputLabel value="Senha:" />
-        			<p:password  id="senha" value="#{login.senha}" required="true" 
-        			requiredMessage="Campo Obrigatório" />
 
-        			<h:panelGrid columns="2" cellspacing="6">
-	        			<p:commandButton value="Entrar"
-						actionListener="#{verLogin.verificaLogin}" update="@form"
-						type="reset" />
-	        			<p:commandButton value="Cadastrar"
-						actionListener="#{verLogin.verificaLogin}" update="@form"
-						type="reset" />
-        			</h:panelGrid>
+					<p:outputLabel value="Usuário:" />
+					<p:inputText id="nome" value="#{verLogin.nome}" required="true"
+						requiredMessage="Campo Obrigatório" />
+
+					<h:outputLabel value="Senha:" />
+					<p:password id="senha" value="#{verLogin.senha}" required="true"
+						requiredMessage="Campo Obrigatório" feedback="true"
+						promptLabel="Insira uma senha" weakLabel="Fraco" goodLabel="Bom"
+						strongLabel="Forte" />
+					<p:message for="senha" />
+
+					<h:panelGrid columns="2" cellspacing="6">
+						<p:commandButton value="Entrar" action="#{verLogin.verificaLogin}"
+							ajax="false" />
+						<p:commandButton value="Cadastrar" action="#{verLogin.verificaLogin}"
+							ajax="false" />
+					</h:panelGrid>
 				</h:panelGrid>
 			</p:dialog>
 

@@ -9,8 +9,8 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.unifor.pin.saa.bussines.AlunosBO;
 import br.unifor.pin.saa.bussines.UsuarioBO;
+import br.unifor.pin.saa.entity.Usuarios;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped
@@ -28,16 +28,39 @@ public class LoginManager {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public String verificaLogin(){
+	public String verificaLogin() {
 		System.out.println("clicado");
-		String jpql = "select a from Alunos a where a.nome = :nome";
-		Query query = entityManager.createQuery(jpql);
-		query.setParameter("nome", nome);
 		
-		if(valida != null){
+		String jpql = "select u from Usuarios u where u.nome = :nome AND u.senha = :senha";
+		Query query = entityManager.createQuery(jpql);
+		
+		if (query.setParameter("nome", nome) != null){
 			return Navigation.SUCESSO;
-		} else {
-			return Navigation.FALHA;
 		}
+		return Navigation.SUCESSO;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getValida() {
+		return valida;
+	}
+
+	public void setValida(String valida) {
+		this.valida = valida;
 	}
 }

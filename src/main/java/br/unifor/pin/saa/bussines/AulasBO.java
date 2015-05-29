@@ -48,6 +48,10 @@ public class AulasBO {
 		return aulasDAO.buscarPorId(id);
 	}
 	
+	public List<Aulas> buscarTodos(){
+		return aulasDAO.buscarTodos();
+	}
+	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void excluir(Aulas aula) {
 		loggerInit("excluir");
