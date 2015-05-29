@@ -21,23 +21,24 @@ public class LoginManager {
 	private String nome;
 	private String senha;
 	private String valida;
+	private Usuarios usuario;
 	
 	@Autowired
 	private UsuarioBO usuarioBO;
 	
-	@PersistenceContext
-	private EntityManager entityManager;
-	
 	public String verificaLogin() {
-		System.out.println("clicado");
 		
-		String jpql = "select u from Usuarios u where u.nome = :nome AND u.senha = :senha";
-		Query query = entityManager.createQuery(jpql);
-		
-		if (query.setParameter("nome", nome) != null){
-			return Navigation.SUCESSO;
+		try {
+			usuario = usuarioBO.buscaLogin(nome);
+			if(nome.equalsIgnoreCase(usuario.getNome())
+					&&senha.equals(usuario.getSenha())
+					&&( usuario.isAtivo() || usuario.isPrimeiroAcesso()) ){
+				return Navigation.SUCESSO;
+			}
+		} catch(NullPointerException e){
+			e.printStackTrace();
 		}
-		return Navigation.SUCESSO;
+		return null;
 	}
 
 	public String getNome() {
@@ -63,4 +64,22 @@ public class LoginManager {
 	public void setValida(String valida) {
 		this.valida = valida;
 	}
+
+	public Usuarios getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuarios usuario) {
+		this.usuario = usuario;
+	}
+
+	public UsuarioBO getUsuarioBO() {
+		return usuarioBO;
+	}
+
+	public void setUsuarioBO(UsuarioBO usuarioBO) {
+		this.usuarioBO = usuarioBO;
+	}
+
+
 }

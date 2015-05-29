@@ -53,8 +53,8 @@
 			<to-view-id>/pages/aula/listAula.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
-		<navigation-rule>
+
+	<navigation-rule>
 		<from-view-id>/pages/aula/listAula.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
@@ -63,6 +63,41 @@
 	</navigation-rule>
 
 	<!-- Aula fim -->
+
+	<!-- Avaliacao -->
+	<navigation-rule>
+		<from-view-id>/pages/avaliacao/cadAvaliacao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/avaliacao/listavaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/avaliacao/cadAvaliacao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>atualiza</from-outcome>
+			<to-view-id>/pages/avaliacao/atualizaAvaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/avaliacao/atualizaAvaliacao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/avaliacao/listAvaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/avaliacao/listAvaliacao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/avaliacao/cadAvaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Avaliacao fim -->
 
 	<!-- Usuario -->
 	<navigation-rule>

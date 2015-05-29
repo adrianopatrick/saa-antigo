@@ -1,5 +1,7 @@
 package br.unifor.pin.saa.bussines;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.AvaliacoesDAO;
+import br.unifor.pin.saa.entity.Aulas;
 import br.unifor.pin.saa.entity.Avaliacoes;
 
 @Component
@@ -42,6 +45,13 @@ public class AvaliacoesBO {
 		avaliacoes = avaliacoesDAO.buscarPorId(avaliacoes.getId());
 		avaliacoesDAO.excluir(avaliacoes);
 		loggerFinhish("excluir");
+	}
+	
+	public List<Avaliacoes> listaAvaliacaoPorComentario(String comentario) {
+		loggerInit("listaAvaliacoesPorComentario");
+		List<Avaliacoes> avaliacoes = avaliacoesDAO.listarPorComentario(comentario);
+		loggerFinhish("listaAvaliacoesPorComentario");
+		return avaliacoes;
 	}
 
 	public void loggerInit(String method) {

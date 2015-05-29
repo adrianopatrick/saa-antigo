@@ -48,6 +48,12 @@ public class UsuarioBO {
 		return usuarioDAO.buscaPorId(id);
 	}
 	
+	public Usuarios buscaLogin(String nome){
+		loggerInit("buscaLogin");
+		loggerFinhish("buscaLogin");
+		return usuarioDAO.buscaLogin(nome);
+	}
+	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void excluir(Usuarios usuario) {
 		loggerInit("excluir");

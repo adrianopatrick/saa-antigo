@@ -60,13 +60,7 @@ public class Avaliacoes implements Serializable{
 		this.nota = nota;
 	}
 
-	public Boolean getAprovado() {
-		return aprovado;
-	}
 
-	public void setAprovado(Boolean aprovado) {
-		this.aprovado = aprovado;
-	}
 
 	public Alunos getAluno() {
 		return aluno;
@@ -90,6 +84,14 @@ public class Avaliacoes implements Serializable{
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
+	}
+
+	public Boolean getAprovado() {
+		return aprovado;
+	}
+
+	public void setAprovado(Boolean aprovado) {
+		this.aprovado = aprovado;
 	}
 
 }
