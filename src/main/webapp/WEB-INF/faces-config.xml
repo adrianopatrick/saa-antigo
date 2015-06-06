@@ -22,10 +22,6 @@
 			<from-outcome>sucesso</from-outcome>
 			<to-view-id>/pages/aula/listAula.xhtml</to-view-id>
 		</navigation-case>
-		<navigation-case>
-			<from-outcome>falha</from-outcome>
-			<to-view-id>/pages/login/login.xhtml</to-view-id>
-		</navigation-case>
 	</navigation-rule>
 	<!-- Login fim -->
 
@@ -94,6 +90,22 @@
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
 			<to-view-id>/pages/avaliacao/cadAvaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula/listAula.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>continue</from-outcome>
+			<to-view-id>/pages/avaliacao/cadAvaliacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula/listAula.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>lista</from-outcome>
+			<to-view-id>/pages/avaliacao/listModeracao.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

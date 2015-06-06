@@ -2,6 +2,8 @@ package br.unifor.pin.saa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +34,8 @@ public class Usuarios {
 	@Column
 	private boolean ativo;
 	
-	
+	@Enumerated(EnumType.ORDINAL)
+	private TipoUsuario tipoUsuario;
 
 	public Integer getId() {
 		return id;
@@ -75,5 +78,12 @@ public class Usuarios {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+	
 	
 }

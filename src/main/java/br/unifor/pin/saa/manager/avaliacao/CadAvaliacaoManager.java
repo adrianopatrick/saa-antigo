@@ -30,11 +30,18 @@ public class CadAvaliacaoManager {
 
 	private Avaliacoes avaliacoes;
 	
-	public CadAvaliacaoManager() {
+	public String preparaSalvar(Aulas aula){
 		avaliacoes = new Avaliacoes();
-		avaliacoes.setAprovado(true);
+		avaliacoes.setAprovado(false);
+		avaliacoes.setAulas(aula);
+		return Navigation.CONTINUE;
 	}
-
+	
+	public String preparaListar(Aulas aula){
+		return Navigation.LISTAR;
+	}
+	
+	
 	public String salvar() {
 
 		avaliacoesBO.salvar(avaliacoes);

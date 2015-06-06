@@ -12,8 +12,8 @@ import br.unifor.pin.saa.utils.MessagesUtils;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped
-@ManagedBean(name = "atualizaAula")
-@Component(value = "atualizaAula")
+@ManagedBean(name = "atualizaTurma")
+@Component(value = "atualizaTurma")
 public class AtualizaTurmaManager {
 
 	@Autowired

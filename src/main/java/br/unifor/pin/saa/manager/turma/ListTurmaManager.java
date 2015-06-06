@@ -13,8 +13,8 @@ import br.unifor.pin.saa.entity.Aulas;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped
-@ManagedBean(name="listAulas")
-@Component(value="listAulas")
+@ManagedBean(name="listTurmas")
+@Component(value="listTurmas")
 public class ListTurmaManager {
 
 	@Autowired

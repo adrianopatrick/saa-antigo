@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.entity.Professores;
 
-
 @Repository
 @Transactional(propagation=Propagation.REQUIRED)
 public class ProfessoresDAO {

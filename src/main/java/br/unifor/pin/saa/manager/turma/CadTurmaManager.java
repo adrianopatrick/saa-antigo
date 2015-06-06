@@ -11,11 +11,9 @@ import javax.faces.model.SelectItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.unifor.pin.saa.bussines.AulasBO;
 import br.unifor.pin.saa.bussines.InstituicoesBO;
 import br.unifor.pin.saa.bussines.ProfessoresBO;
 import br.unifor.pin.saa.bussines.TurmaBO;
-import br.unifor.pin.saa.entity.Aulas;
 import br.unifor.pin.saa.entity.Instituicoes;
 import br.unifor.pin.saa.entity.Professores;
 import br.unifor.pin.saa.entity.Turma;

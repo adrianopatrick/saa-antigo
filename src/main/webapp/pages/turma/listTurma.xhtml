@@ -40,14 +40,9 @@
 					<h:outputText value="#{aula.descricao}" />
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
-					headerText="Avaliar" rendered="#{usuarioTO.usuario.tipoUsuario == 'ALUNO'}">
+					headerText="Avaliar">
 					<p:commandButton icon="ui-icon-circle-check" ajax="false"
-						title="Avaliar" action="#{cadAvaliacao.preparaSalvar(aula)}" />
-				</p:column>
-				<p:column style="width: 55px; text-align: center" resizable="false"
-					headerText="Moderar" rendered="#{usuarioTO.usuario.tipoUsuario == 'PROFESSOR'}">
-					<p:commandButton icon="ui-icon-circle-check" ajax="false"
-						title="Avaliar" action="#{cadAvaliacao.preparaListar(aula)}" />
+						title="Avaliar" action="#{cadAvaliacao.salvar(avaliacao)}" />
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
 					headerText="Atualizar">

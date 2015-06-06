@@ -61,6 +61,15 @@ public class UsuarioDAO {
 		return (Usuarios) query.getSingleResult();
 	}
 	
+	public Usuarios logar(String login, String senha){
+		String jpql = "select u from Usuarios u where u.email = :email and u.senha = :senha";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("email", login);
+		query.setParameter("senha", senha);
+		
+		return (Usuarios) query.getSingleResult();
+	}
+	
 	public void excluir(Usuarios usuario) {
 		entityManager.remove(usuario);
 	}

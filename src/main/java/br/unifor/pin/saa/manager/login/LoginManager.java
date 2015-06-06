@@ -2,15 +2,14 @@ package br.unifor.pin.saa.manager.login;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.unifor.pin.saa.bussines.UsuarioBO;
+import br.unifor.pin.saa.entity.TipoUsuario;
 import br.unifor.pin.saa.entity.Usuarios;
+import br.unifor.pin.saa.utils.MessagesUtils;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped
@@ -18,35 +17,33 @@ import br.unifor.pin.saa.utils.Navigation;
 @Component(value = "verLogin")
 public class LoginManager {
 
-	private String nome;
+	private String email;
 	private String senha;
 	private String valida;
 	private Usuarios usuario;
-	
+
 	@Autowired
 	private UsuarioBO usuarioBO;
-	
+	@Autowired
+	private UsuarioTO usuarioTO;
+
 	public String verificaLogin() {
-		
-		try {
-			usuario = usuarioBO.buscaLogin(nome);
-			if(nome.equalsIgnoreCase(usuario.getNome())
-					&&senha.equals(usuario.getSenha())
-					&&( usuario.isAtivo() || usuario.isPrimeiroAcesso()) ){
-				return Navigation.SUCESSO;
+
+		usuarioTO.setUsuario(usuarioBO.logar(email, senha));
+
+		if (usuarioTO.getUsuario() != null
+				&& usuarioTO.getUsuario().isAtivo()) {
+			if(usuarioTO.getUsuario().getTipoUsuario().equals(TipoUsuario.ALUNO)){
+				//listar as turmas do aluno
+			} else if(usuarioTO.getUsuario().getTipoUsuario().equals(TipoUsuario.PROFESSOR)){
+				//listar as turmas do professor
 			}
-		} catch(NullPointerException e){
-			e.printStackTrace();
+			MessagesUtils.info("Bem vindo "+usuarioTO.getUsuario().getNome()+"!");
+			return Navigation.SUCESSO;
+		} else {
+			MessagesUtils.error("Login ou senha incorretos!");
+			return Navigation.FALHA;
 		}
-		return null;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getSenha() {
@@ -81,5 +78,12 @@ public class LoginManager {
 		this.usuarioBO = usuarioBO;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 }
