@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.unifor.pin.saa.entity.Alunos;
 import br.unifor.pin.saa.entity.Instituicoes;
 
 @Repository
@@ -29,6 +28,14 @@ public class InstituicoesDAO {
 	
 	public void atualizar(Instituicoes instituicao){
 		entityManager.merge(instituicao);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Instituicoes> buscarTodos(){
+		String jpql = "select i from Instituicoes i";
+		Query query = entityManager.createQuery(jpql);
+		
+		return (List<Instituicoes>)query.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")

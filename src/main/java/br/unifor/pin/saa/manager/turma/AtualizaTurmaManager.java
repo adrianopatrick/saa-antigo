@@ -1,4 +1,4 @@
-package br.unifor.pin.saa.manager.aula;
+package br.unifor.pin.saa.manager.turma;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -14,7 +14,7 @@ import br.unifor.pin.saa.utils.Navigation;
 @RequestScoped
 @ManagedBean(name = "atualizaAula")
 @Component(value = "atualizaAula")
-public class AtualizaAulaManager {
+public class AtualizaTurmaManager {
 
 	@Autowired
 	private AulasBO aulasBO;

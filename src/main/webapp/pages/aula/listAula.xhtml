@@ -17,17 +17,16 @@
 			<h:panelGrid columns="3" styleClass="panelgrid">
 				<p:outputLabel id="conteudoLb" value="Conteudo: " />
 				<p:inputText id="conteudoTx" value="#{listAulas.conteudo}" />
-				<p:commandButton value="Listar"
-					actionListener="#{listAulas.lista}" update="@form" />
+				<p:commandButton value="Listar" actionListener="#{listAulas.lista}"
+					update="@form" />
 			</h:panelGrid>
 			<br />
 			<h:panelGrid columns="1" styleClass="panelgrid">
-				<p:commandButton value="Incluir"
-					action="#{cadAula.preparaSalvar}" ajax="false" />
+				<p:commandButton value="Incluir" action="#{cadAula.preparaSalvar}"
+					ajax="false" />
 			</h:panelGrid>
 			<br />
-			<p:dataTable id="tbAulas" var="aula"
-				value="#{listAulas.aulas}"
+			<p:dataTable id="tbAulas" var="aula" value="#{listAulas.aulas}"
 				rendered="#{listAulas.aulas != null}"
 				emptyMessage="Nenhum resultado encontrado." resizableColumns="true">
 
@@ -41,10 +40,14 @@
 					<h:outputText value="#{aula.descricao}" />
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
+					headerText="Avaliar">
+					<p:commandButton icon="ui-icon-circle-check" ajax="false"
+						title="Avaliar" action="#{cadAvaliacao.salvar(avaliacao)}" />
+				</p:column>
+				<p:column style="width: 55px; text-align: center" resizable="false"
 					headerText="Atualizar">
-					<p:commandButton icon="ui-icon-pencil" ajax="false"
-						title="Atualizar"
-						action="#{atualizaAula.preparaAtualizar(aula)}" />
+					<p:commandButton icon="ui-icon-refresh" ajax="false"
+						title="Atualizar" action="#{atualizaAula.preparaAtualizar(aula)}" />
 				</p:column>
 				<p:column id="clExcluir" style="width: 43px; text-align: center"
 					resizable="false" headerText="Excluir">

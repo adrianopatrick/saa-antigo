@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import br.unifor.pin.saa.dao.InstituicoesDAO;
 import br.unifor.pin.saa.entity.Alunos;
 import br.unifor.pin.saa.entity.Instituicoes;
+import br.unifor.pin.saa.entity.Professores;
 
 
 @Component
@@ -35,6 +36,10 @@ public class InstituicoesBO {
 		instituicoesDAO.atualizar(instituicoes);
 		loggerFinhish("atualizar");
 		
+	}
+	
+	public List<Instituicoes> buscarTodos(){
+		return instituicoesDAO.buscarTodos();
 	}
 	
 	public Instituicoes buscarPorId(Long id){

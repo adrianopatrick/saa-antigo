@@ -1,5 +1,7 @@
 package br.unifor.pin.saa.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -32,6 +34,14 @@ public class ProfessoresDAO {
 	
 	public Professores buscarPorId(Long id){
 		return entityManager.find(Professores.class, id);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Professores> buscarTodos(){
+		String jpql = "select p from Professores p";
+		Query query = entityManager.createQuery(jpql);
+		
+		return (List<Professores>)query.getResultList();
 	}
 	
 	public Professores buscarPorNome(String nome) {

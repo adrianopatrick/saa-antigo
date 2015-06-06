@@ -8,12 +8,8 @@ import javax.faces.bean.RequestScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.unifor.pin.saa.bussines.AulasBO;
 import br.unifor.pin.saa.bussines.AvaliacoesBO;
-import br.unifor.pin.saa.bussines.UsuarioBO;
-import br.unifor.pin.saa.entity.Aulas;
 import br.unifor.pin.saa.entity.Avaliacoes;
-import br.unifor.pin.saa.entity.Usuarios;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped

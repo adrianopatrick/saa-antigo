@@ -1,4 +1,4 @@
-package br.unifor.pin.saa.manager.aula;
+package br.unifor.pin.saa.manager.turma;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import br.unifor.pin.saa.utils.Navigation;
 @RequestScoped
 @ManagedBean(name="listAulas")
 @Component(value="listAulas")
-public class ListAulaManager {
+public class ListTurmaManager {
 
 	@Autowired
 	private AulasBO aulasBO;

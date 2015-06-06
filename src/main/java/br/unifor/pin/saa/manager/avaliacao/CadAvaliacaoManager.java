@@ -13,10 +13,8 @@ import org.springframework.stereotype.Component;
 
 import br.unifor.pin.saa.bussines.AulasBO;
 import br.unifor.pin.saa.bussines.AvaliacoesBO;
-import br.unifor.pin.saa.bussines.TurmaBO;
 import br.unifor.pin.saa.entity.Aulas;
 import br.unifor.pin.saa.entity.Avaliacoes;
-import br.unifor.pin.saa.entity.Turma;
 import br.unifor.pin.saa.utils.MessagesUtils;
 import br.unifor.pin.saa.utils.Navigation;
 
@@ -31,9 +29,10 @@ public class CadAvaliacaoManager {
 	private AulasBO aulasBO;
 
 	private Avaliacoes avaliacoes;
-
+	
 	public CadAvaliacaoManager() {
 		avaliacoes = new Avaliacoes();
+		avaliacoes.setAprovado(true);
 	}
 
 	public String salvar() {

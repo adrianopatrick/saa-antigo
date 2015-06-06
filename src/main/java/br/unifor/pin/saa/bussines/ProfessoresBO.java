@@ -1,5 +1,7 @@
 package br.unifor.pin.saa.bussines;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.ProfessoresDAO;
 import br.unifor.pin.saa.entity.Professores;
+import br.unifor.pin.saa.entity.Turma;
 
 public class ProfessoresBO {
 	
@@ -28,6 +31,10 @@ public class ProfessoresBO {
 		professoresDAO.atualizar(professores);
 		loggerFinhish("atualizar");
 		
+	}
+	
+	public List<Professores> buscarTodos(){
+		return professoresDAO.buscarTodos();
 	}
 	
 	public Professores buscarPorId(Long id){
