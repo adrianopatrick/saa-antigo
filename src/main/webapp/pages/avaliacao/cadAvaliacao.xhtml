@@ -17,13 +17,13 @@
 				</h:panelGrid>
 				<h:panelGrid id="gridUser" columns="4" styleClass="panelgrid">
 				
-					<p:outputLabel value="Avaliacão: " />
+					<p:outputLabel value="Descrição: " />
 					<font color="red">*</font>
 					<p:selectOneMenu id="avaliacao" value="#{cadAvaliacao.avaliacoes.aulas}"
 						converter="aulaConverter" required="true"
 						requiredMessage="Campo Obrigatório">
 						<f:selectItems value="#{cadAvaliacao.aula}" var="a"
-							itemLabel="#{a.descricao}" itemValue="#{a}" />
+							itemLabel="#{a.descricao}" itemValue="#{a}"/>
 					</p:selectOneMenu>
 					<p:message for="avaliacao" />
 

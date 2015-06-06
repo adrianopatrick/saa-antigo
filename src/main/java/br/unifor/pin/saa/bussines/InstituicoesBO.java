@@ -1,6 +1,8 @@
 package br.unifor.pin.saa.bussines;
 
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.InstituicoesDAO;
+import br.unifor.pin.saa.entity.Alunos;
 import br.unifor.pin.saa.entity.Instituicoes;
 
 
@@ -42,6 +45,13 @@ public class InstituicoesBO {
 		loggerInit("BuscaInstituicoesPorNome");
 		Instituicoes instituicoes = instituicoesDAO.buscarPorNome(nome);
 		loggerInit("BuscaAlunoPorNome");
+		return instituicoes;
+	}
+	
+	public List<Instituicoes> listaInstituicoesPorNome(String nome) {
+		loggerInit("listaInstituicoesPorNome");
+		List<Instituicoes> instituicoes = instituicoesDAO.listarPorNome(nome);
+		loggerFinhish("listaInstituicoesPorNome");
 		return instituicoes;
 	}
 	
