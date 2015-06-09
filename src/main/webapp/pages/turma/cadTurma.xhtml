@@ -19,31 +19,43 @@
 
 					<p:outputLabel value="Instituição: " />
 					<font color="red">*</font>
-					<p:selectOneMenu id="instituicao" value="#{cadAula.aula.turma}"
-						converter="instituicaoConverter" required="true"
+					<p:selectOneMenu id="instituicao"
+						value="#{cadTurma.turma.instituicao}"
+						converter="instituicoesConverter" required="true"
 						requiredMessage="Campo Obrigatório">
-						<f:selectItems value="#{cadInstituicao.turma}" var="t"
-							itemLabel="#{t.disciplina}" itemValue="#{t}" />
+						<f:selectItems value="#{cadTurma.instituicao}" var="i"
+							itemLabel="#{i.nome}" itemValue="#{i}" />
 					</p:selectOneMenu>
 					<p:message for="instituicao" />
 
-					<p:outputLabel value="Descrição da aula: " />
+					<p:outputLabel value="Professor: " />
 					<font color="red">*</font>
-					<p:inputText id="descricao" value="#{cadAula.aula.descricao}"
-						required="true" requiredMessage="Campo Obrigatório" />
-					<p:message for="descricao" />
+					<p:selectOneMenu id="professor"
+						value="#{cadTurma.turma.professor}"
+						converter="professoresConverter" required="true"
+						requiredMessage="Campo Obrigatório">
+						<f:selectItems value="#{cadTurma.professor}" var="p"
+							itemLabel="#{p.nome}" itemValue="#{p}" />
+					</p:selectOneMenu>
+					<p:message for="professor" />
 
-					<p:outputLabel value="Descrição do conteudo: " />
+					<p:outputLabel value="Semestre: " />
 					<font color="red">*</font>
-					<p:inputText id="conteudo" value="#{cadAula.aula.conteudo}"
+					<p:inputText id="semestre" value="#{cadTurma.turma.semestre}"
 						required="true" requiredMessage="Campo Obrigatório" />
-					<p:message for="descricao" />
+					<p:message for="semestre" />
+
+					<p:outputLabel value="Disciplina: " />
+					<font color="red">*</font>
+					<p:inputText id="disciplina" value="#{cadTurma.turma.disciplina}"
+						required="true" requiredMessage="Campo Obrigatório" />
+					<p:message for="disciplina" />
 
 
 				</h:panelGrid>
 				<br />
 				<h:panelGrid columns="3" styleClass="panelgrid">
-					<p:commandButton value="Salvar" action="#{cadAula.salvar}"
+					<p:commandButton value="Salvar" action="#{cadTurma.salvar}"
 						ajax="false" />
 					<p:commandButton value="Limpar"
 						actionListener="#{cadUsuario.limpaDados}" update="@form"

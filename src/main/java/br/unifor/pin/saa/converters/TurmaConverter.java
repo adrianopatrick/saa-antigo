@@ -14,7 +14,7 @@ public class TurmaConverter implements Converter {
 
 	@Override
 	public Object getAsObject(FacesContext ctx, UIComponent component, String value) {
-		if (value != null && !"".equals(value) && !value.isEmpty()) {  
+		if (value != null && !value.isEmpty()) {  
             return this.getAttributesFrom(component).get(value);  
         }  
         return null;

@@ -11,8 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.AulasDAO;
 import br.unifor.pin.saa.entity.Aulas;
-import br.unifor.pin.saa.entity.Turma;
-import br.unifor.pin.saa.entity.Usuarios;
 
 @Component
 public class AulasBO {

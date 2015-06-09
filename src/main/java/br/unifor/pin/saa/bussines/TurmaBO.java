@@ -23,6 +23,8 @@ public class TurmaBO {
 	
 	public void salvar(Turma turma) {
 		loggerInit("salvar");
+		turma.setProfessor(turma.getProfessor());
+		turma.setInstituicao(turma.getInstituicao());
 		turmaDAO.salvar(turma);
 		loggerFinhish("salvar");
 	}

@@ -13,34 +13,32 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="turma")
+@Table(name = "turma")
 public class Turma implements Serializable {
-
 
 	private static final long serialVersionUID = -1203019308743583974L;
 
-
 	@Id
-	@SequenceGenerator(name="turma_seq", sequenceName="turma_seq", allocationSize=1)
-	@GeneratedValue(generator="turma_seq", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "turma_seq", sequenceName = "turma_seq", allocationSize = 1)
+	@GeneratedValue(generator = "turma_seq", strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String disciplina;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String semestre;
-	
+
 	@ManyToOne
-	@JoinColumn(name="professor_id")
+	@JoinColumn(name = "professor_id")
 	private Professores professor;
-	
+
 	@ManyToOne
-	@JoinColumn(name="instituicao_id")
+	@JoinColumn(name = "instituicao_id")
 	private Instituicoes instituicao;
 
 	/*
-	 *  Getters e setters
+	 * Getters e setters
 	 */
 	public Long getId() {
 		return id;
@@ -51,7 +49,7 @@ public class Turma implements Serializable {
 	}
 
 	public String getDisciplina() {
-		return disciplina+":"+semestre;
+		return disciplina + ":" + semestre;
 	}
 
 	public void setDisciplina(String disciplina) {
