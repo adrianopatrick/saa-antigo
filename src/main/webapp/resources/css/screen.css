@@ -1,9 +1,15 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #EAECEE;
-	font-family: Verdana, sans-serif;
+	background-color: #ebebeb;
+	font-family: Arial, sans-serif;
 	font-size: 10px;
+	
+}
+
+
+a {
+	text-decoration:none
 }
 
 #header {
@@ -17,21 +23,44 @@ body {
 }
 
 #header h1 {
-	padding-top: 24px;
-	font-size: 250%;
+  line-height: 115px;
+  font-size: 33px;
+  letter-spacing: -2px;
+  margin-top:0;
 }
+
+
+.ui-dialog.ui-widget-content {
+	border:none;
+	box-shadow:none;
+}
+
+
+.ui-widget-header {
+	background-color:#ddd !important;
+}
+
+.ui-shadow { 
+	box-shadow:0 !important;
+	background:#eee !important;
+}
+
 
 #header a {
 	color : #f0f0f0;
 }
 
 #page {
-	background: #ffffff;
-	width: 960px;
-	margin-left: auto;
-	margin-right: auto;
-	border-right: solid 2px #a0a0a0;
-	border-bottom: solid 2px #a0a0a0;
+background: #ffffff;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  border-right: solid 2px #a0a0a0;
+  border-bottom: solid 2px #a0a0a0;
+  box-shadow: 0 0 40px #999;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 10px;a0a0a0;
 }
 
 #sidebar {
@@ -55,7 +84,12 @@ body {
 #content {
 	min-height: 320px;
 	font-size: 120%;
-	width: 720px;
+	width:400px;
+	margin:0 auto;
+}
+
+#content h2 {
+	text-align:center
 }
 
 #footer {
@@ -88,6 +122,12 @@ body {
 
 .panelgrid {
 	margin: 0 auto;
+	
+}
+
+.panelgrid input[type=text], .panelgrid input[type=password] {
+	padding:10px;
+	margin-bottom:9px
 }
 
 .odd {

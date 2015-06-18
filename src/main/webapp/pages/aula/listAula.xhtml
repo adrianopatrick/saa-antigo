@@ -22,11 +22,13 @@
 				<p:commandButton value="Incluir" action="#{cadAula.preparaSalvar}"
 					ajax="false" />
 			</h:panelGrid>
+			
 			<br />
 			<h:panelGrid columns="0" styleClass="panelgrid">
 
 			</h:panelGrid>
 			<br />
+			
 			<p:dataTable id="tbAulas" var="aula" value="#{listAulas.aulas}"
 				rendered="#{listAulas.aulas != null}"
 				emptyMessage="Nenhum resultado encontrado." resizableColumns="true">
