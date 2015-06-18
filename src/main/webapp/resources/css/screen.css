@@ -4,12 +4,10 @@ body {
 	background-color: #ebebeb;
 	font-family: Arial, sans-serif;
 	font-size: 10px;
-	
 }
 
-
 a {
-	text-decoration:none
+	text-decoration: none
 }
 
 #header {
@@ -23,51 +21,60 @@ a {
 }
 
 #header h1 {
-  line-height: 115px;
-  font-size: 33px;
-  letter-spacing: -2px;
-  margin-top:0;
+	line-height: 115px;
+	font-size: 33px;
+	letter-spacing: -2px;
+	margin-top: 0;
 }
 
+
+
+.ui-selectonemenu {
+	width: 199px !important;
+}
+
+.ui-selectonemenu label {
+	width:180px !important
+}
 
 .ui-dialog.ui-widget-content {
-	border:none;
-	box-shadow:none;
+	border: none;
+	box-shadow: none;
 }
-
 
 .ui-widget-header {
-	background-color:#ddd !important;
+	background-color: #ddd !important;
 }
 
-.ui-shadow { 
-	box-shadow:0 !important;
-	background:#eee !important;
+.ui-shadow {
+	box-shadow: 0 !important;
+	background: #eee !important;
 }
-
 
 #header a {
-	color : #f0f0f0;
+	color: #f0f0f0;
 }
 
 #page {
-background: #ffffff;
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  border-right: solid 2px #a0a0a0;
-  border-bottom: solid 2px #a0a0a0;
-  box-shadow: 0 0 40px #999;
-  border-radius: 25px;
-  overflow: hidden;
-  margin-top: 10px;a0a0a0;
+	background: #ffffff;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	border-right: solid 2px #a0a0a0;
+	border-bottom: solid 2px #a0a0a0;
+	box-shadow: 0 0 40px #999;
+	border-radius: 25px;
+	overflow: hidden;
+	margin-top: 10px;
+	a0a0a0;
 }
 
 #sidebar {
 	float: right;
-	width: 200px;	
+	width: 200px;
 	border: 1px solid #d0d0d0;
-	min-height: 240px;
+	min-height: 345px;
+	margin-top: -6px;
 	padding: 4px;
 }
 
@@ -84,12 +91,12 @@ background: #ffffff;
 #content {
 	min-height: 320px;
 	font-size: 120%;
-	width:400px;
-	margin:0 auto;
+	width: 400px;
+	margin: 0 auto;
 }
 
 #content h2 {
-	text-align:center
+	text-align: center
 }
 
 #footer {
@@ -97,7 +104,7 @@ background: #ffffff;
 	padding: 8px;
 	margin: 8px;
 	border-top: 1px solid #c0c0c0;
-	clear : both;
+	clear: both;
 }
 
 .panel {
@@ -109,6 +116,9 @@ background: #ffffff;
 	left: 50%;
 	top: 50%;
 }
+
+
+.ui-dialog { position:relative !important}
 
 .panel h1 {
 	font-size: 120%;
@@ -122,13 +132,19 @@ background: #ffffff;
 
 .panelgrid {
 	margin: 0 auto;
-	
 }
 
 .panelgrid input[type=text], .panelgrid input[type=password] {
-	padding:10px;
-	margin-bottom:9px
+	padding: 10px;
+	margin-bottom: 9px ;
+	width: 179px;
 }
+
+.ui-dialog-content input {
+	width: 180px !important;
+	
+}
+
 
 .odd {
 	background: #f0f0f0;
@@ -141,7 +157,6 @@ background: #ffffff;
 .dataTable {
 	border-collapse: collapse;
 	width: 100%;
-	
 }
 
 .dataTable th {
@@ -167,7 +182,7 @@ background: #ffffff;
 	padding-top: 4px;
 }
 
-.value {	
+.value {
 	margin-right: 8px;
 }
 
