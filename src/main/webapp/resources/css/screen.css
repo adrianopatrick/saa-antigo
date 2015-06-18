@@ -27,14 +27,12 @@ a {
 	margin-top: 0;
 }
 
-
-
 .ui-selectonemenu {
 	width: 199px !important;
 }
 
 .ui-selectonemenu label {
-	width:180px !important
+	width: 180px !important
 }
 
 .ui-dialog.ui-widget-content {
@@ -70,12 +68,13 @@ a {
 }
 
 #sidebar {
-	float: right;
-	width: 200px;
-	border: 1px solid #d0d0d0;
-	min-height: 345px;
-	margin-top: -6px;
-	padding: 4px;
+  float: right;
+  width: 200px;
+  border: 1px solid #d0d0d0;
+  min-height: 345px;
+  margin-top: -6px;
+  margin-left: 4px;
+  padding: 4px;
 }
 
 #sidebar h1 {
@@ -91,8 +90,9 @@ a {
 #content {
 	min-height: 320px;
 	font-size: 120%;
-	width: 400px;
+	width: 100%;
 	margin: 0 auto;
+	margin-right: 20px !important;
 }
 
 #content h2 {
@@ -117,8 +117,9 @@ a {
 	top: 50%;
 }
 
-
-.ui-dialog { position:relative !important}
+.ui-dialog {
+	position: relative !important
+}
 
 .panel h1 {
 	font-size: 120%;
@@ -136,15 +137,13 @@ a {
 
 .panelgrid input[type=text], .panelgrid input[type=password] {
 	padding: 10px;
-	margin-bottom: 9px ;
+	margin-bottom: 9px;
 	width: 179px;
 }
 
 .ui-dialog-content input {
 	width: 180px !important;
-	
 }
-
 
 .odd {
 	background: #f0f0f0;
