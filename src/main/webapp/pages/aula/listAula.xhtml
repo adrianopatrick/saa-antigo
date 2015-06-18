@@ -14,16 +14,17 @@
 				<p:messages id="messages" showDetail="true" autoUpdate="true"
 					closable="true" />
 			</h:panelGrid>
-			<h:panelGrid columns="3" styleClass="panelgrid">
+			<h:panelGrid columns="4" styleClass="panelgrid">
 				<p:outputLabel id="conteudoLb" value="Conteudo: " />
 				<p:inputText id="conteudoTx" value="#{listAulas.conteudo}" />
 				<p:commandButton value="Listar" actionListener="#{listAulas.lista}"
 					update="@form" />
-			</h:panelGrid>
-			<br />
-			<h:panelGrid columns="1" styleClass="panelgrid">
 				<p:commandButton value="Incluir" action="#{cadAula.preparaSalvar}"
 					ajax="false" />
+			</h:panelGrid>
+			<br />
+			<h:panelGrid columns="0" styleClass="panelgrid">
+
 			</h:panelGrid>
 			<br />
 			<p:dataTable id="tbAulas" var="aula" value="#{listAulas.aulas}"
@@ -40,12 +41,14 @@
 					<h:outputText value="#{aula.descricao}" />
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
-					headerText="Avaliar" rendered="#{usuarioTO.usuario.tipoUsuario == 'ALUNO'}">
+					headerText="Avaliar"
+					rendered="#{usuarioTO.usuario.tipoUsuario == 'ALUNO'}">
 					<p:commandButton icon="ui-icon-circle-check" ajax="false"
 						title="Avaliar" action="#{cadAvaliacao.preparaSalvar(aula)}" />
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
-					headerText="Moderar" rendered="#{usuarioTO.usuario.tipoUsuario == 'PROFESSOR'}">
+					headerText="Moderar"
+					rendered="#{usuarioTO.usuario.tipoUsuario == 'PROFESSOR'}">
 					<p:commandButton icon="ui-icon-circle-check" ajax="false"
 						title="Avaliar" action="#{cadAvaliacao.preparaListar(aula)}" />
 				</p:column>
