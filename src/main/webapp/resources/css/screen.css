@@ -136,9 +136,9 @@ a {
 }
 
 .panelgrid input[type=text], .panelgrid input[type=password] {
-	padding: 10px;
-	margin-bottom: 9px;
-	width: 179px;
+	padding: 4px;
+	margin-bottom: 1px;
+	width: 191px;
 }
 
 .ui-dialog-content input {
