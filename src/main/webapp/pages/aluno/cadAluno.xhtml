@@ -21,12 +21,6 @@
 				<p:inputText id="nome" value="#{cadAluno.nome}" required="true"
 					requiredMessage="Campo Obrigatório" />
 				<p:message for="nome" />
-				
-				<p:outputLabel value="Cpf: " />
-				<font color="red">*</font>
-				<p:inputText id="cpf" value="#{cadAluno.cpf}" required="true"
-					requiredMessage="Campo Obrigatório" />
-				<p:message for="cpf" />
 
 				<p:outputLabel value="Matricula: " />
 				<font color="red">*</font>
@@ -34,7 +28,11 @@
 					requiredMessage="Campo Obrigatório" />
 				<p:message for="matricula" />
 
-				
+				<p:outputLabel value="Cpf: " />
+				<font color="red">*</font>
+				<p:inputText id="cpf" value="#{cadAluno.cpf}" required="true"
+					requiredMessage="Campo Obrigatório" />
+				<p:message for="cpf" />
 			</h:panelGrid>
 			<br />
 			<h:panelGrid columns="3" styleClass="panelgrid">
