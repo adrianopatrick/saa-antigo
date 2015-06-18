@@ -45,6 +45,10 @@ public class LoginManager {
 			return Navigation.FALHA;
 		}
 	}
+	
+	public String preparaCadastro(){
+		return Navigation.CONTINUE;
+	}
 
 	public String getSenha() {
 		return senha;

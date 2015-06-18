@@ -33,8 +33,14 @@ public class CadUsuarioManager {
 		usuario.setNome(nome);
 		usuario.setEmail(email);
 		usuario.setSenha(senha);
-		usuario.setTipoUsuario(tipoUsuario);
-		
+
+		if (vinculo.equals("professor")){
+			usuario.setTipoUsuario(tipoUsuario.PROFESSOR);
+		}
+		else if (vinculo.equals("aluno")){
+			usuario.setTipoUsuario(tipoUsuario.ALUNO);
+		}
+
 		usuarioBO.salvar(usuario);
 		MessagesUtils.info("Usuário salvo com sucesso!");
 		listUsuario.lista();
@@ -83,26 +89,20 @@ public class CadUsuarioManager {
 		this.tipo = tipo;
 	}
 
-	public TipoUsuario getTipoUsuario() {
-		return tipoUsuario;
-	}
-
-	public void setTipoUsuario(TipoUsuario tipoUsuario) {
-		//this.tipoUsuario = tipoUsuario;
-		if (vinculo == "professor"){
-			setTipoUsuario(tipoUsuario.PROFESSOR);
-		}
-		else if (vinculo == "aluno"){
-			setTipoUsuario(tipoUsuario.ALUNO);
-		}
-	}
-
 	public String getVinculo() {
 		return vinculo;
 	}
 
 	public void setVinculo(String vinculo) {
 		this.vinculo = vinculo;
+	}
+
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 	
 }
