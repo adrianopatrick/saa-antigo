@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import br.unifor.pin.saa.bussines.UsuarioBO;
 import br.unifor.pin.saa.entity.TipoUsuario;
 import br.unifor.pin.saa.entity.Usuarios;
-import br.unifor.pin.saa.utils.MessagesUtils;
 import br.unifor.pin.saa.utils.Navigation;
 
 @RequestScoped
@@ -42,7 +41,7 @@ public class CadUsuarioManager {
 		}
 
 		usuarioBO.salvar(usuario);
-		MessagesUtils.info("Usuário salvo com sucesso!");
+		//MessagesUtils.info("Usuário salvo com sucesso!");
 		listUsuario.lista();
 		
 		return Navigation.SUCESSO;
