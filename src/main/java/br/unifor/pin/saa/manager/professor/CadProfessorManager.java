@@ -30,7 +30,7 @@ public class CadProfessorManager {
 		professores.setNome(nome);
 		professoresBO.salvar(professores);
 		MessagesUtils.info("Professor salvo com sucesso!");
-		listProfessor.lista();
+		//listProfessor.lista();
 		
 		return Navigation.SUCESSO;
 	}

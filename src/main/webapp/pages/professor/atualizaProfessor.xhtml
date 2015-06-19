@@ -13,32 +13,20 @@
 			<h:panelGrid id="gridUser" columns="4" styleClass="panelgrid">
 				<p:outputLabel value="Nome: " />
 				<font color="red">*</font>
-				<p:inputText id="nome" value="#{atualizaAluno.alunoSelecionado.nome}" required="true"
+				<p:inputText id="nome" value="#{atualizaProfessor.professorSelecionado.nome}" required="true"
 					requiredMessage="Campo Obrigatório" />
 				<p:message for="nome" />
-
-				<p:outputLabel value="Cpf: " />
-				<font color="red">*</font>
-				<p:inputText id="cpf" value="#{atualizaAluno.alunoSelecionado.cpf}" required="true"
-					requiredMessage="Campo Obrigatório" />
-				<p:message for="cpf" />
-				
-				<p:outputLabel value="Matricula: " />
-				<font color="red">*</font>
-				<p:inputText id="matricula" value="#{atualizaAluno.alunoSelecionado.matricula}" required="true"
-					requiredMessage="Campo Obrigatório" />
-				<p:message for="matricula" />
 
 			</h:panelGrid>
 			<br />
 			<h:panelGrid columns="3" styleClass="panelgrid">
 				<p:commandButton value="Voltar"
-					action="#{listAluno.preparaListar}" ajax="false"
+					action="#{listProfessor.preparaListar}" ajax="false"
 					immediate="true" />
-				<p:commandButton value="Atualizar" action="#{atualizaAluno.atualizar}"
+				<p:commandButton value="Atualizar" action="#{atualizaProfessor.atualizar}"
 					ajax="false" />
 				<p:commandButton value="Limpar"
-					actionListener="#{atualizaAluno.limparDados}" update="@form"
+					actionListener="#{atualizaProfessor.limparDados}" update="@form"
 					type="reset" />
 			</h:panelGrid>
 		</h:form>
