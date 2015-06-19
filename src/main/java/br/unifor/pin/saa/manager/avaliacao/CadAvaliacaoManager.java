@@ -27,6 +27,7 @@ public class CadAvaliacaoManager {
 	private AvaliacoesBO avaliacoesBO;
 	@Autowired
 	private AulasBO aulasBO;
+	private Aulas aula;
 
 	private Avaliacoes avaliacoes;
 	
@@ -38,6 +39,7 @@ public class CadAvaliacaoManager {
 	}
 	
 	public String preparaListar(Aulas aula){
+		this.aula = aula;
 		return Navigation.LISTAR;
 	}
 	
@@ -71,6 +73,10 @@ public class CadAvaliacaoManager {
 
 	public void setAvaliacoes(Avaliacoes avaliacoes) {
 		this.avaliacoes = avaliacoes;
+	}
+
+	public void setAula(Aulas aula) {
+		this.aula = aula;
 	}
 
 }
