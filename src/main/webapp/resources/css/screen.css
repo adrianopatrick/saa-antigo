@@ -77,6 +77,19 @@ a {
   padding: 4px;
 }
 
+
+
+
+.ui-datatable-resizable {
+  padding-bottom: 1px;
+  overflow: auto;
+  
+  overflow-y: scroll;
+  max-height: 170px;
+  min-height: 170px;
+}
+
+
 #sidebar h1 {
 	display: block;
 	font-size: 120%;
@@ -118,7 +131,10 @@ a {
 }
 
 .ui-dialog {
-	position: relative !important
+	position: relative !important;
+	margin:0 auto !important;
+	left:0 !important;
+	
 }
 
 .panel h1 {
