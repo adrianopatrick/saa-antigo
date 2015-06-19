@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.unifor.pin.saa.dao.ProfessoresDAO;
+import br.unifor.pin.saa.entity.Alunos;
 import br.unifor.pin.saa.entity.Professores;
 
 @Component
@@ -48,6 +49,13 @@ public class ProfessoresBO {
 		loggerInit("BuscaProfessoresPorNome");
 		return professores;
 	}
+	public List<Professores> listaProfessoresPorNome(String nome) {
+		loggerInit("listaProfessoresPorNome");
+		List<Professores> professores = professoresDAO.listarPorNome(nome);
+		loggerFinhish("listaAlunosPorNome");
+		return professores;
+	}
+	
 	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void excluir(Professores professores) {
